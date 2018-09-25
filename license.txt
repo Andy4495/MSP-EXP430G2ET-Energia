@@ -9,6 +9,8 @@ two different licenses associated with them.
 The <4.4.0.2009> directory is a package exported from TI's UniFlash tool
 and is distributed per the UniFlash license agreement
 (http://processors.wiki.ti.com/index.php/File:Uniflash_v4_license.zip).
+The only changes to the exported package were to add the license.txt file
+and remove the image/hex file used when creating the package.
 
 `boards.txt`, `platform.txt`, or `programmers.txt` are modified versions
 of files included in Energia, and are distributed per the Energia license

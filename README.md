@@ -1,9 +1,9 @@
 Energia Support for MSP-EXP430G2ET
 ==================================
 
-Texas instruments has released an updated version of the MSP430G2 LaunchPad: [MSP-EXP430G2ET][2]. The updated LaunchPad supports the same DIP-package G2 processors as the [old LaunchPad][1], along with adding an RGB LED to the existing RED and GREEN LEDs. Most significantly, however, is an update to the emulation section to TI's [eZ-FET][3] debugger, including [EnergyTrace][4] support (hence the "ET" in the Launchpad name). This brings the G2 debugging and emulation interface to be on-par with newer LaunchPad products.
+Texas Instruments has released an updated version of the MSP430G2 LaunchPad: [MSP-EXP430G2ET][2]. The updated LaunchPad supports the same DIP-package G2 processors as the [old LaunchPad][1], along with adding an RGB LED to the existing RED and GREEN LEDs. Most significantly, however, is an update to the emulation section to TI's [eZ-FET][3] debugger, including [EnergyTrace][4] support (hence the "ET" in the Launchpad name). This brings the G2 debugging and emulation interface to be on-par with newer LaunchPad products.
 
-Unfortunately, the current version of [Energia][8] (18) and the MSP430 boards package (1.0.3) does not support the LaunchPad since it assumes that the older emulation interface is used when programming MSP430G2 chips.
+Unfortunately, the current version of [Energia][8] (18) and the MSP430 boards package (1.0.3) does not support the LaunchPad, since it assumes that the older emulation interface is used when programming MSP430G2 chips.
 
 This repo contains a somewhat hacked method of supporting the new G2ET LaunchPad in Energia. Hopefully, full support for the new LaunchPad will be available in an upcoming MSP430 board package update.
 
@@ -44,7 +44,7 @@ Energia uses a tool called `mspdebug` for flashing the older MSP-EXP430G2 Launch
 
 UniFlash includes a feature to export a standalone command line package. This package includes all the executables, libraries, and configuration files to flash a device. The `4.4.0.2009` directory in this repo was created from UniFlash 4.4 using an MSP430G2 configuration, and contains version 8.1.0.1365 of dslite.
 
-For MacOS or Linux support, a similar procedure could be used to create the necessary executables by running the Standalone Command Line package export from the OS-specific version of UniFlash, then then following a similar procedure as outlined in the [Installing](#installing-windows) section above.
+For MacOS or Linux support, a similar procedure could be used to create the necessary executables by running the Standalone Command Line package export from the OS-specific version of UniFlash, then following a similar procedure as outlined in the [Installing](#installing-windows) section above.
 
 Energia should be able to officially support the G2ET LaunchPad in the future with an updated MSP430 board package which includes the latest version of the `dslite` tool.
 
