@@ -2,32 +2,12 @@ Energia Support for MSP-EXP430G2ET
 ==================================
 
 # Update #
-The latest MSP430 boards package (version 1.0.5, available around early October 2018) contains the latest version of dslite, which should make the original procedure below unnecessary. However, when I tried to use the `MSP-EXP430G2ET w/ MSP430G2553` board menu selection with package version 1.0.5, I got the following error at the very start of the compilation process:
+The MSP-EXP430G2ET LaunchPads are now supported by Energia version [1.8.7E20][11] (released October 2, 2018). Energia 20 includes version 1.0.4 of the MSP430 boards package. It includes an 8.x version of `dslite` and a `boards.txt` file which allows the selection of the `MSP-EXP430G2ET` LaunchPads from the `Tools->Board...` menu.  
 
-    Energia: 1.6.10E18 (Windows 10), Board: "MSP-EXP430G2ET w/ MSP430G2553"
-    Board MSP-EXP430G2ET2553LP (platform msp430, package energia) is unknown
-    Error compiling for board MSP-EXP430G2ET w/ MSP430G2553.
-
-Since the dslite flashing tool supports the older G2 LaunchPads, a simple solution is to configure Energia to use the `dslite` tool instead of `mspdebug` for all G2 boards (instead of just for the G2ET LaunchPad).
-
-1. Replace `.upload.tool` and `.upload.protocol` values in `boards.txt` with `dslite` instead of the `mspdebug` and `rf2500` settings. 
-
-  In other words, modify the `boards.txt` file (for Windows, it is located at `%LOCALAPPDATA%\Energia15\packages\energia\hardware\msp430\1.0.5`) and change:
-
-        MSP-EXP430G2553LP.upload.tool=mspdebug
-        MSP-EXP430G2553LP.upload.protocol=rf2500
-
-  To:
-
-        MSP-EXP430G2553LP.upload.tool=dslite
-        MSP-EXP430G2553LP.upload.protocol=dslite
-
-  You can also modify the same properties for the G2331 and G2452 variants if you use those chips with the ET LaunchPad.
-
-2. Next, you need to create a G2 config file for the dslite tool. This is as simple as copying the file `MSP-EXP430G2ET2553LP.ccxml` to a file named `MSP-EXP430G2553LP.ccxml`. In Windows, this file is located at `%LOCALAPPDATA%\Energia15\packages\energia\tools\dslite\8.2.0.1400`
+The procedure below can be used with Energia 18.
 
 
-# Original Writeup #
+# Original Writeup (for use with Energia 18)#
 
 Texas Instruments has released an updated version of the MSP430G2 LaunchPad: [MSP-EXP430G2ET][2]. The updated LaunchPad supports the same DIP-package G2 processors as the [old LaunchPad][1], along with adding an RGB LED to the existing RED and GREEN LEDs. Most significantly, however, is an update to the emulation section to TI's [eZ-FET][3] debugger, including [EnergyTrace][4] support (hence the "ET" in the Launchpad name). This brings the G2 debugging and emulation interface to be on-par with newer LaunchPad products.
 
@@ -106,3 +86,4 @@ References
 [8]: http://energia.nu/
 [9]: ./4.4.0.2009/license.txt
 [10]: https://github.com/robertinant/EnergiaNG/blob/master/license.txt
+[11]: http://energia.nu/download/
