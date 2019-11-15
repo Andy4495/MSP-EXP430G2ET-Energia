@@ -1,7 +1,7 @@
 License
 -------
 
-Repository URL: https://gitlab.com/Andy4495/msp-exp430g2et-energia
+Repository URL: https://github.com/Andy4495/msp-exp430g2et-energia
 
 The files in this repo are from two different sources, and therefore have
 two different licenses associated with them.
